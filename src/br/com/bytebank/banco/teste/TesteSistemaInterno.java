@@ -5,7 +5,7 @@ import br.com.bytebank.banco.modelo.Fiscal;
 import br.com.bytebank.banco.modelo.Gerente;
 import br.com.bytebank.banco.modelo.SistemaInterno;
 
-public class TesteSistemaIntermo {
+public class TesteSistemaInterno {
 
 	public static void main(String[] args) {
 
