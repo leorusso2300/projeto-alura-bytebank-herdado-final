@@ -1,5 +1,7 @@
 package br.com.bytebank.banco.modelo;
 
+import br.com.bytebank.banco.exceptions.MinhaExcecao;
+
 public abstract class Funcionario {
 	private String nome;
 	private String cpf;
@@ -28,6 +30,9 @@ public abstract class Funcionario {
 	}
 
 	public void setSalario(double salario) {
+		if (salario <= 0) {
+			throw new MinhaExcecao("Insira um valor valido!!");
+		}
 		this.salario = salario;
 	}
 

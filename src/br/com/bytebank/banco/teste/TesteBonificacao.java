@@ -3,6 +3,7 @@ package br.com.bytebank.banco.teste;
 import java.text.NumberFormat;
 import java.util.Locale;
 
+import br.com.bytebank.banco.exceptions.MinhaExcecao;
 import br.com.bytebank.banco.modelo.Administador;
 import br.com.bytebank.banco.modelo.ControleBonificacao;
 import br.com.bytebank.banco.modelo.Designer;
@@ -21,10 +22,15 @@ public class TesteBonificacao {
 		Administador adm = new Administador();
 		Designer designer = new Designer();
 
-		gerente.setSalario(1000);
-		video.setSalario(1000);
-		adm.setSalario(1000);
-		designer.setSalario(1000);
+		try {
+			gerente.setSalario(100);
+			video.setSalario(1000);
+			adm.setSalario(1000);
+			designer.setSalario(1000);
+		} catch (MinhaExcecao e) {
+			System.out.println("Exception: " + e.getMessage());
+			e.printStackTrace();
+		}
 
 		ControleBonificacao controle = new ControleBonificacao();
 		controle.registra(video);
